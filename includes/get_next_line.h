@@ -6,7 +6,7 @@
 /*   By: gneve <gneve@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 15:26:58 by gneve             #+#    #+#             */
-/*   Updated: 2021/04/29 06:16:13 by gneve            ###   ########.fr       */
+/*   Updated: 2021/04/30 14:01:43 by gneve            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
+# define BUFFER_SIZE 600
 int				get_next_line(int fd, char **line);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strchr(const char *s, int c);

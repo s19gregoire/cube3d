@@ -35,6 +35,7 @@ CFLAGS += -I./libft
 SRCS =\
 	./srcs/main.c\
 	./srcs/get_next_line.c\
+	./srcs/parser.c\
 	./srcs/get_next_line_utils.c\
 
 HEADERS =\
