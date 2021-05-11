@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gneve <gneve@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/11 15:26:58 by gneve             #+#    #+#             */
-/*   Updated: 2021/05/04 14:20:26 by gneve            ###   ########.fr       */
+/*   Created: 2021/05/04 14:28:04 by gneve             #+#    #+#             */
+/*   Updated: 2021/05/08 15:20:08 by gneve            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-
-# include <stdlib.h>
-# include <unistd.h>
-
-# define BUFFER_SIZE 4096
-int				get_next_line(int fd, char **line);
-#endif
+#include "cube.h"
+int	ft_checkscreen(int x, int y)
+{
+	if (x <= 0)
+		return (0);
+	else
+		return (1);
+	if (y <= 0)
+		return (0);
+	else
+		return (1);
+}

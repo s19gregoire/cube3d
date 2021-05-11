@@ -6,16 +6,19 @@
 /*   By: gneve <gneve@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 05:28:16 by gneve             #+#    #+#             */
-/*   Updated: 2021/04/30 15:46:02 by gneve            ###   ########.fr       */
+/*   Updated: 2021/05/08 14:16:14 by gneve            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUBE_H
 # define CUBE_H
 
+#include "debug_utils.h" // TODO REMOVE BEFORE PUSH
+
 # include "mlx.h"
 # include "get_next_line.h"
 # include "libft.h"
+# include <math.h>
 
 # define NUM_KEYS 8
 
@@ -27,13 +30,15 @@ typedef struct s_int_vector
 	int		y;
 }	t_ivec;
 
-typedef struct s_cubein {
+typedef struct s_cubein
+{
 	char	*texpaths[NUM_TEX];
 	t_ivec	resol;
 	t_ivec	map_siz;
 }	t_cubein;
 
-typedef union u_colors {
+typedef union u_colors
+{
 	struct s_colors_separate
 	{
 		u_int8_t	a;

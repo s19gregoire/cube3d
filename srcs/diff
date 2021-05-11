@@ -1,0 +1,30 @@
+15c15
+< size_t	hasto(char *s, char c)
+---
+> static size_t	ft_strchr(char *s, char c)
+31c31
+< static char	*jointo(char *s1, char *s2, char **tofree)
+---
+> static char	*ft_strjoin_free(char *s1, char *s2, char **tofree)
+39,40c39,40
+< 	sl1 = hasto(s1, '\0');
+< 	sl2 = hasto(s2, '\0');
+---
+> 	sl1 = ft_strchr(s1, '\0');
+> 	sl2 = ft_strchr(s2, '\0');
+68c68
+< 	*line = jointo(*line, buf, line);
+---
+> 	*line = ft_strjoin_free(*line, buf, line);
+82c82
+< 	*line = jointo(buf, NULL, NULL);
+---
+> 	*line = ft_strjoin_free(buf, NULL, NULL);
+85c85
+< 	while (!hasto(buf, '\n') && ret)
+---
+> 	while (!ft_strchr(buf, '\n') && ret)
+91c91
+< 	ret = hasto(buf, '\n');
+---
+> 	ret = ft_strchr(buf, '\n');

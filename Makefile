@@ -6,7 +6,7 @@
 #    By: gneve <gneve@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/27 13:33:43 by gneve             #+#    #+#              #
-#    Updated: 2021/04/27 14:44:38 by gneve            ###   ########.fr        #
+#    Updated: 2021/04/30 16:05:23 by gneve            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = cub3D
 CC = gcc
 # CFLAGS = -Wall -Wextra -Werror
 CFLAGS += -I./includes/ -I/usr/include
+CFLAGS += -g3 -fsanitize=address
 
 MLX = ./minilibx-linux/libmlx.a
 MLXFL = $(dir ${MLX})
@@ -36,9 +37,9 @@ SRCS =\
 	./srcs/main.c\
 	./srcs/get_next_line.c\
 	./srcs/parser.c\
-	./srcs/get_next_line_utils.c\
 
 HEADERS =\
+	./includes/debug_utils.h\
 	./includes/mlx.h\
 	./includes/get_next_line.h\
 	./includes/cube.h\
@@ -53,10 +54,10 @@ all: LIBFT MLX ${NAME}
 	@printf ""
 
 LIBFT :
-	$(MAKE) -C ${LIBFTFL} $(MAKECMDGOALS)
+	$(MAKE) -C ${LIBFTFL} #$(MAKECMDGOALS)
 
 MLX :
-	$(MAKE) -C ${MLXFL} $(MAKECMDGOALS)
+	$(MAKE) -C ${MLXFL} #$(MAKECMDGOALS)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -71,3 +72,6 @@ fclean : clean
 	rm -f ${NAME}
 
 re : fclean all
+
+rre : MAKECMDGOALS=
+rre : fclean all
